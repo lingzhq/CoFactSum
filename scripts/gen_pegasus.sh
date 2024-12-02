@@ -4,9 +4,7 @@ DEVICE_ID=$7
 DATA="./dataset/"
 OUTPUT_DIR="./out/"
 
-cd ..
-
-CUDA_VISIBLE_DEVICES=$DEVICE_ID python CoFactSum-Git/generate.py \
+CUDA_VISIBLE_DEVICES=$DEVICE_ID python generate.py \
     --data_dir $DATA/xsum/ \
     --model_path google/pegasus-xsum \
     --output_dir $OUTPUT_DIR/pegasus_large/xsum/ \
@@ -15,7 +13,7 @@ CUDA_VISIBLE_DEVICES=$DEVICE_ID python CoFactSum-Git/generate.py \
     --max_input_length 512 \
 
 
-CUDA_VISIBLE_DEVICES=$DEVICE_ID python CoFactSum-Git/generate.py \
+CUDA_VISIBLE_DEVICES=$DEVICE_ID python generate.py \
     --data_dir $DATA/cnndm/ \
     --model_path google/pegasus-cnn_dailymail \
     --output_dir $OUTPUT_DIR/pegasus_large/cnndm/ \
