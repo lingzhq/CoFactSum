@@ -4,8 +4,6 @@ DEVICE_ID=$1
 DATA="./dataset/"
 OUTPUT_DIR="./out/"
 
-cd ..
-
 CUDA_VISIBLE_DEVICES=$DEVICE_ID python gen_counterfact.py \
     --data_dir $DATA/xsum/ \
     --model_path $OUTPUT_DIR/pegasus_large/xsum_consistency_prj_train/checkpoint-50000 \
